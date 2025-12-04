@@ -1,0 +1,210 @@
+/* =======================
+   GLOBAL STYLING
+   ======================= */
+
+/* Vi tar bort standardmarginalen på hela sidan och sätter grundläggande typsnitt och färger */
+body {
+  margin: 0; /* Tar bort alla standardmarginaler som webbläsaren lägger till */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Bestämmer typsnittet som används överallt */
+  background: rgb(205, 90, 90); /* Sätter en rödaktig bakgrundsfärg för hela sidan */
+  color: rgb(255, 255, 255); /* Gör all text vit som standard */
+}
+
+/* =======================
+   HEADER / BANNER
+   ======================= */
+
+/* Bannern längst upp på sidan där titel och platsinformation visas */
+.banner {
+  background: rgb(121, 8, 42); /* Mörkröd bakgrundsfärg för att sticka ut */
+  padding: 1.5rem; /* Ger utrymme runt texten i bannern */
+  display: flex; /* Använder flexbox för att placera saker i rad */
+  justify-content: space-between; /* Sprider ut elementen till vänster och höger */
+  align-items: center; /* Centrerar elementen vertikalt i bannern */
+  position: sticky; /* Bannern följer med när du scrollar nedåt */
+  top: 0; /* Fäster bannern högst upp på sidan */
+  z-index: 100; /* Ser till att bannern ligger ovanför allt annat */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Lägger till en mjuk skugga under bannern för djup */
+}
+
+/* Titeln i bannern */
+.banner h1 {
+  margin: 0; /* Tar bort eventuell extra marginal som webbläsaren lägger till */
+  font-size: 2rem; /* Gör texten stor så att den syns tydligt */
+  text-transform: uppercase; /* Gör all text versal (stora bokstäver) */
+  color: #fff; /* Titeln ska vara vit så att den syns mot den mörka bakgrunden */
+  /* Textskugga för att skapa en lysande/guldig effekt */
+  text-shadow:
+    0 0 5px #f3d92c,
+    0 0 10px #f3d92c,
+    0 0 15px #f3d92c,
+    0 0 25px #f3d92c;
+}
+
+/* Platsikonen och text bredvid titeln */
+.location {
+  display: flex; /* Använder flexbox så att ikon och text hamnar på samma rad */
+  align-items: center; /* Centrerar texten vertikalt med ikonen */
+  gap: 0.5rem; /* Litet mellanrum mellan ikonen och texten */
+  font-weight: bold; /* Gör texten fet så att den syns bättre */
+}
+
+/* Själva ikonen i platsen */
+.location i {
+  color: #ffd700; /* Gul färg på flaggikonen */
+  font-size: 1.5rem; /* Storlek på ikonen */
+}
+
+/* =======================
+   CONTROLS / KNAPP OCH SELECT
+   ======================= */
+
+/* Container för knappen och månadsval */
+.controls {
+  margin: 2rem auto; /* Lägger till avstånd ovanför och under, centrerar blocket */
+  text-align: center; /* Centrerar innehållet horisontellt */
+}
+
+/* Grundläggande styling för både dropdown-menyn och knappen */
+select, button {
+  font-size: 1rem; /* Bestämmer textstorlek */
+  cursor: pointer; /* Ändrar muspekaren till hand när man hovrar */
+  transition: all 0.3s ease; /* Gör alla förändringar mjuka och gradvisa */
+  margin-left: 0.5rem; /* Lite mellanrum till vänster för snygg placering */
+}
+
+/* Styling för själva dropdown-menyn (select) */
+select {
+  padding: 0.7rem 1rem; /* Lägger till utrymme inuti selecten */
+  font-weight: 600; /* Lätt fet stil för att synas tydligare */
+  border-radius: 12px; /* Rundade hörn för en mjukare look */
+  background: rgb(121, 8, 42); /* Mörkröd bakgrund */
+  backdrop-filter: blur(8px); /* Ger en lätt glas-effekt bakom dropdown */
+  border: 1px solid rgb(255, 255, 255); /* Vit kantlinje runt selecten */
+  color: white; /* Texten i dropdownen ska vara vit */
+}
+
+/* Hover-effekt på dropdown */
+select:hover {
+  background: rgb(243, 217, 44); /* Bakgrunden blir gul när man hovrar */
+  transform: translateY(-2px); /* Litet lyft för effekt */
+}
+
+/* När man klickar på selecten */
+select:focus {
+  outline: none; /* Tar bort standardblå ram */
+  border: 1px solid #f3d92c; /* Markerar med gul kant när aktiv */
+  box-shadow: 0 0 10px rgba(243, 217, 44, 0.5); /* Lägger till mjuk glow runt */
+}
+
+/* Styling för knappen */
+button#generate-btn {
+  padding: 0.5rem 1rem; /* Inre marginal */
+  border-radius: 8px; /* Rundade hörn */
+  border: none; /* Tar bort kantlinje */
+  background: rgb(121, 8, 42); /* Mörkröd bakgrund */
+  color: white; /* Vit text */
+}
+
+/* Hover-effekt på knapp */
+button#generate-btn:hover {
+  background: #f3d92c; /* Gul bakgrund när man hovrar */
+  box-shadow: 0 0 15px rgb(121, 8, 42); /* Lätt glow under hover */
+  transform: translateY(-2px); /* Litet lyft */
+}
+
+/* =======================
+   SEASON INFO TEXT
+   ======================= */
+
+/* Text som visar t.ex. vilken månad eller säsongsinfo */
+.season-info {
+  text-align: center; /* Centrerar texten */
+  font-size: 1.2rem; /* Liten men tydlig textstorlek */
+  margin-bottom: 1.5rem; /* Avstånd nedåt innan nästa block */
+}
+
+/* =======================
+   RECIPE CARDS / KORTEN
+   ======================= */
+
+/* Grid-container som håller alla receptkort */
+.recipe-container {
+  display: grid; /* Lägger korten i ett rutnät */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Kortens storlek anpassas automatiskt */
+  gap: 1.5rem; /* Mellanrum mellan korten */
+  padding: 2rem; /* Utrymme runt hela gridet */
+}
+
+/* Själva korten med recept */
+.recipe-card {
+  position: relative; /* Viktigt för overlay-effekter */
+  background: rgba(255, 255, 255, 0.1); /* Lätt transparent bakgrund */
+  backdrop-filter: blur(10px); /* Ger kortet en glasliknande effekt */
+  border-radius: 20px; /* Rundar hörnen för modern känsla */
+  overflow: hidden; /* Innehåll som sticker ut klipps bort */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4); /* Mjuk skugga under kortet */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smootha animationer */
+}
+
+/* Effekt när man hovrar över kortet */
+.recipe-card:hover {
+  transform: translateY(-5px) scale(1.03); /* Kortet lyfts lite och förstoras lätt */
+  box-shadow: 0 10px 25px rgba(243, 217, 44, 0.6); /* Gul glow runt kortet */
+}
+
+/* Bilden inne i kortet */
+.recipe-card img {
+  width: 100%; /* Bilden fyller kortets bredd */
+  height: 180px; /* Bildens höjd */
+  object-fit: cover; /* Beskär bilden för att fylla rutan utan att förvränga */
+}
+
+/* Overlay som läggs över bilden för glas-effekt */
+.recipe-card::before {
+  content: ""; /* Tomt innehåll, används bara för styling */
+  position: absolute; /* Placeras ovanpå bilden */
+  top: 0;
+  left: 0;
+  width: 100%; /* Täcker hela bildens bredd */
+  height: 180px; /* Täcker bildens höjd */
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.05) 0%,   /* Tunn vit högst upp */
+    rgba(255,255,255,0.02) 60%,  /* Nästan genomskinlig i mitten */
+    rgba(255,255,255,0) 100%      /* Helt transparent längst ner */
+  );
+  backdrop-filter: blur(4px) saturate(110%); /* Lätt blur-effekt för glass-look */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtil kantlinje */
+  box-shadow: inset 0 0 5px rgba(255,255,255,0.03); /* Liten inre glans */
+  transition: opacity 0.4s ease; /* Smooth fade */
+  pointer-events: none; /* Overlay blockerar inte klick */
+}
+
+/* Overlay försvinner när man hovrar */
+.recipe-card:hover::before {
+  opacity: 0; /* Gör overlayn osynlig när man hovrar */
+}
+
+/* =======================
+   CARD CONTENT / TEXT
+   ======================= */
+
+/* Texten under bilden */
+.card-content {
+  padding: 1rem; /* Lägger till utrymme runt texten */
+}
+
+/* Rubrik i kortet */
+.card-content h3 {
+  margin: 0 0 0.5rem 0; /* Avstånd under rubrik */
+  font-size: 1.2rem; /* Textstorlek */
+  text-transform: capitalize; /* Gör första bokstaven i varje ord stor */
+}
+
+/* Länk i kortet */
+.card-content a {
+  text-decoration: none; /* Ingen understrykning */
+  font-weight: bold; /* Fet stil */
+  color: #f3d92c; /* Gul färg som matchar resten av designen */
+}

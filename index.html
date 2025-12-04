@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <!-- Ställer in teckenkodning till UTF-8 vilket stödjer svenska tecken -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Gör så att sidan fungerar på mobil (responsiv design) -->
+
+  <title>Seasonal Recipe Generator</title>
+  <!-- Titel som syns i webbläsarfliken -->
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Länkar in din externa CSS-fil där all design ligger -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Länkar till Font Awesome för att kunna använda ikoner (t.ex. flagga) -->
+</head>
+
+<body>
+<!-- Hela sidans innehåll ligger i body -->
+
+<header>
+  <!-- Headern innehåller banner och titel överst på sidan -->
+  <div class="banner">
+    <h1>Seasonal Recipe Generator</h1>
+    <!-- Sidans huvudtitel -->
+
+    <div class="location">
+      <!-- Sektion som visar att appen är inställd på Sverige -->
+      <i class="fas fa-flag"></i> Sverige
+      <!-- Flaggsymbol från Font Awesome + text -->
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Här börjar själva innehållet för sidan (receptgeneratorn) -->
+
+
+  <section class="controls">
+    <label for="month-select">Välj månad:</label>
+    <select id="month-select">
+      <option value="1">January</option>
+      <option value="2">February</option>
+      <option value="3">Mars</option>
+      <option value="4">April</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">July</option>
+      <option value="8">August</option>
+      <option value="9">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+    <button id="generate-btn">Generate recipe</button>
+  </section>
+
+  <section id="season-info" class="season-info"></section>
+  <section id="recipes" class="recipe-container"></section>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
