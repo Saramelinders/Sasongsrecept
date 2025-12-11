@@ -2,46 +2,59 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <!-- Ställer in teckenkodning till UTF-8 vilket stödjer svenska tecken -->
+  <!-- Sätter teckenkodningen till UTF-8 så att svenska bokstäver som å, ä och ö funkar utan problem -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Gör så att sidan fungerar på mobil (responsiv design) -->
+  <!-- Gör sidan responsiv – alltså att den anpassar sig efter skärmstorlek, mobilen, surfplattan osv -->
 
   <title>Seasonal Recipe Generator</title>
-  <!-- Titel som syns i webbläsarfliken -->
+  <!-- Texten som syns i webbläsarens flik längst upp(Titeln) -->
 
   <link rel="stylesheet" href="css/style.css">
-  <!-- Länkar in din externa CSS-fil där all design ligger -->
+  <!-- Länkar CSS-fil där all styling och layout bor -->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Länkar till Font Awesome för att kunna använda ikoner (t.ex. flagga) -->
+  <!-- Länkar till Font Awesome så att jag kan använda olika ikoner, t.ex. flaggan i headern -->
 </head>
 
 <body>
-<!-- Hela sidans innehåll ligger i body -->
+<!-- Själva kroppsdelen av sidan, allt användaren ser kommer in här -->
+
 
 <header>
-  <!-- Headern innehåller banner och titel överst på sidan -->
+  <!-- Headern är den stora toppsektionen. I detta fall är det där titeln syns -->
   <div class="banner">
+    <!-- Det blir som en container som håller ihop rubrik och platsinfo -->
+
     <h1>Seasonal Recipe Generator</h1>
-    <!-- Sidans huvudtitel -->
+    <!-- Den stora huvudrubriken – typ "vad sidan handlar om" -->
 
     <div class="location">
-      <!-- Sektion som visar att appen är inställd på Sverige -->
-      <i class="fas fa-flag"></i> Sverige
-      <!-- Flaggsymbol från Font Awesome + text -->
+      <!-- En liten sektion som visar användarens "region" – här är den satt till Sverige -->
+      <i class="fas fa-flag"></i> Sweden
+      <!-- Ikonen är en flagga från Font Awesome, och efter den står texten Sweden -->
     </div>
   </div>
 </header>
 
+
 <main>
-  <!-- Här börjar själva innehållet för sidan (receptgeneratorn) -->
+
 
 
   <section class="controls">
-    <label for="month-select">Välj månad:</label>
+    <!-- Den här sektionen innehåller alla interaktiva kontroller: dropdown + knapp -->
+
+    <label for="month-select">Choose month:</label>
+    <!-- texten "choose month" tydliggör vad dropdownen gör -->
+
     <select id="month-select">
+      <!-- Dropdown-listan där användaren väljer månad, värdena (value) är 1–12 -->
+      <!-- Januari = 1 osv. Detta används sedan i JavaScript för att veta vilken data som ska hämtas -->
+
       <option value="1">January</option>
+      <!-- Varje option är ett val i listan. Texten är det användaren ser. Value är det JS jobbar med -->
+
       <option value="2">February</option>
       <option value="3">Mars</option>
       <option value="4">April</option>
@@ -54,21 +67,22 @@
       <option value="11">November</option>
       <option value="12">December</option>
     </select>
+
     <button id="generate-btn">Generate recipe</button>
+    <!-- Knappen som triggar hela processen – när man klickar så körs JS och hämtar recept -->
   </section>
 
+
   <section id="season-info" class="season-info"></section>
+  <!-- Sektion där info om säsongens råvaror kommer visas från JavaScript -->
+
+
   <section id="recipes" class="recipe-container"></section>
+  <!-- Här kommer själva recepten att hamna – fylls också i av JavaScript -->
 </main>
 
+
 <script src="js/app.js"></script>
+<!-- Kopplar in din JavaScript-fil som styr logik, API-anrop, DOM-manipulation osv -->
 </body>
 </html>
-
-
-
-
-
-
-
-
